@@ -12,12 +12,12 @@ function setup(){
 
 function initGame(){
   background(50, 50, 100);
-  var name = 'Snake Game';
+  var name = '貪吃蛇';
   textSize(50);
   fill(255);
   nameWidht = textWidth(name);
   text(name, (width - nameWidht)/2, height/2 - 40);
-  startBtn = createButton('Start Game');
+  startBtn = createButton('開始遊戲');
   startBtn.position(width/2 - startBtn.width/2, height/2);
   startBtn.mousePressed(startGame);
   noLoop();
@@ -35,8 +35,8 @@ function runGame(){
   background(50, 50, 100);
   textSize(12);
   fill(255);
-  text("score: " + snake.tail.length, 1, 10);
-  text("highscore: " + highscore, 1, 24);
+  text("分數: " + snake.tail.length, 1, 10);
+  text("最高分: " + highscore, 1, 24);
 
   snake.update();
   snake.show();
@@ -58,13 +58,13 @@ function endGame(){
   background(50, 50, 100);
   textSize(32);
   var msg = 'Game Over';
-  var score = 'Your Score is ' + snake.tail.length;
+  var score = '恭喜得到 ' + snake.tail.length + '分';
   msgWidht = textWidth(msg);
   scoreWidht = textWidth(score);
   fill(255);
   text(msg, (width - msgWidht)/2, height/2 - 40);
   text(score, (width - scoreWidht)/2, height/2);
-  startBtn = createButton('Restart Game');
+  startBtn = createButton('重新開始遊戲');
   startBtn.position(width/2 - startBtn.width/2, height/2 + 40);
   startBtn.mousePressed(startGame);
   noLoop();

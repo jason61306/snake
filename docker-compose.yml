@@ -1,0 +1,14 @@
+version: '3'
+services:
+  psd1-portal:
+     build: .
+     environment:
+       - LANG=C.UTF-8
+       - LC_ALL=C.UTF-8
+     image: snake:v1
+     ports:
+       - "80:80"
+     volumes:
+       - "./:/usr/share/nginx/html/"      
+     restart: always
+     container_name: snake
